@@ -15,9 +15,15 @@ pipeline {
             }
         }
 
-        stage('Build & Test') {
+        stage('Build & Unit Test') {
             steps {
-                bat 'mvn clean test'
+                bat 'mvn test'
+            }
+        }
+
+        stage('Integration/API Test') {
+            steps {
+                bat 'mvn -Dtest=CipherApiIntegrationTest test'
             }
         }
 
