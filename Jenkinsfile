@@ -23,7 +23,7 @@ pipeline {
 
         stage('Integration/API Test') {
             steps {
-                bat 'mvn -Dtest=CipherApiIntegrationTest test'
+                bat 'mvn test -Dtest=**/CipherApiIntegrationTest'
             }
         }
 
